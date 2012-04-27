@@ -1,0 +1,208 @@
+html, body{
+	background: url('/images/background_repeat.png') repeat;
+}
+#wrapper{
+	background: url('/images/background_top.png') repeat-x;
+}
+#container{
+	width: 918px;
+}
+#top_section{
+	width: inherit;
+	height: 261px;
+	background: url('/images/top_section_background.png');
+}
+#text_with_arrow{
+	width: 626px;
+	height: 128px;
+	padding-top: 101px;
+	padding-left: 16px;
+}
+#search_and_button{
+	margin-top: 120px;
+	margin-left: 10px;
+	width: 263px;
+	height: 100px;
+}
+.input_text{
+	width: 263px;
+	height: 45px;
+	font-family: "Helvetica";
+	color: #3e545c;
+	font-size: 16px;
+	outline: none;
+	background: url('/images/search_field.png');
+	border: none;
+	text-indent: 5px;
+}
+.submit_button{
+	width: 98px;
+	height: 23px;
+	background: url('/images/search_button.png') 0px 0px;
+	border: none;
+	cursor: pointer;
+}
+.submit_button:hover{
+	background: url('/images/search_button.png') 0px -23px;
+}
+
+
+#content_container{
+	width: inherit;
+	height: 680px;
+}
+#content{
+	width: inherit;
+	display: none;
+}
+#loading{
+	width: 100px;
+	height: 100px;
+	display: none;
+}
+#search_results{
+	width: 428px;
+	height: 36px;
+	margin-top: 10px;
+	background: url('/images/search_results.png');
+}
+#tweets_and_photos{
+	width: 825px;
+	height: 305px;
+	margin-top: 10px;
+}
+#tweets{
+	width: 400px;
+	height: inherit;
+	background: url('/images/content_background.png') no-repeat;
+}
+#flickr{
+	width: 400px;
+	height: inherit;
+	background: url('/images/content_background.png') no-repeat;
+	margin-left: 20px;
+}
+#flickr_header{
+	width: 233px;
+	height: 24px;
+	margin-top: 3px;
+}
+#flickr_slide_show{
+	margin-top: 32px;
+	width: 275px;
+	height: 240px;
+	
+}
+#map{
+	width: 825px;
+	height: 305px;
+	margin-top: 25px;
+	background: url('/images/map_background_final.png') no-repeat;
+	padding-top: 3px;
+}
+#map_container{
+	width: 820px;
+	height: 295px;
+
+}
+#tweet_header{
+	width: 124px;
+	height: 24px;
+	margin-top: 3px;
+}
+#tweet_box{
+	margin-top: 5px;
+	width: 300px;
+	height: 265px;
+	overflow: scroll;
+	color: #442f2f;
+	font-size: 20px;
+	font-weight: bold;
+	font-family: 'Myriad Pro','helvetica', 'arial';
+	border: 1px dotted #442f2f;
+}
+#returned_tweets{
+	margin-bottom: 15px;
+	text-align: center;
+
+}
+
+
+#footer{
+	width: inherit;
+	height: 181px;
+	margin-top: 30px;
+	background: url('/images/footer_picture.png') no-repeat;
+
+}
+#footer_contact{
+	padding-top: 100px;
+	width: 310px;
+}
+#social_networking{
+	width: 283px;
+	height: 39px;
+	padding-top: 95px;
+	padding-left: 261px;
+}
+#follow_me{
+	width: 136px;
+	height: 31px;
+	margin-top: 8px;
+	background: url('/images/follow_me.png') no-repeat;
+}
+#social_link{
+	width: 112px;
+	height: 32px;
+	padding-left: 16px;
+}
+#rss{
+	width: 32px;
+	height: 32px;
+	cursor: pointer;
+}
+#face_book{
+	width: 31px;
+	height: 30px;
+	cursor: pointer;
+	margin-left: 8px;
+}
+#twitter{
+	width: 31px;
+	height: 30px;
+	cursor: pointer;
+	margin-left: 8px;
+	
+}
+.image_size{
+	width: 275px;
+	height: 182px;
+}
+.footer_text{
+	font-size: 14px;
+	color: #53666c;
+	cursor: pointer;
+	font-family:'Myriad Pro', 'Arial', 'helvetica';
+	
+}
+.copyright{
+	font-size: 12px;
+	color: #958c65;
+	font-family:'Myriad Pro', 'Arial', 'helvetica';
+}
+
+
+
+
+
+.clear{
+	display: block;
+	clear: both;
+	height: 1px;
+}
+.margin_auto{
+	margin: auto auto;
+}
+.left{
+	float: left;
+}a
