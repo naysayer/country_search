@@ -21,11 +21,9 @@ function showResults(){
 
 function getJsonData(){
 	var searchQuery = $('.input_text').val();
-	console.log(searchQuery);
 	
 	$.getJSON('http://search.twitter.com/search.json?result_type=recent&rpp=20&callback=?&q=%23' + searchQuery,
 	function(json){
-		console.log(json.results);
 		$.each(json.results, function(index, tweets){
 			displayTweets(tweets);
 		});
@@ -33,7 +31,6 @@ function getJsonData(){
 	
 	$.getJSON('http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=816541b11404e131faf6580ee13a86d4&tags='+ searchQuery +'&per_page=5&format=json&nojsoncallback=1',
 	function(flickr){
-		console.log(flickr.photos.photo);
 		$.each(flickr.photos.photo, function(index, photos){
 			createPhotoSlideShow(photos);
 		});
@@ -66,7 +63,6 @@ function createPhotoSlideShow(photos){
 	var url = 'http://farm' + farm + '.staticflickr.com/'+ serverId +'/' + id + '_'+ secret +'.jpg';
 	
 	imageSource.push(url);
-	console.log(imageSource);
 };
 
 function addImagesToSlideShow(){
