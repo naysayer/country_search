@@ -3,8 +3,8 @@ var imageIndex = 0;
 var geocoder;
 var map;
 var firstTime = true;
+var sliderTimer = '';
 $(document).ready(function() {
-	console.log("hello");
 	geocoder = new google.maps.Geocoder(); //creats the ability for google to call this later
 	$('#input_field').submit(function(){ 
 		$('#loading').show();
@@ -44,6 +44,7 @@ function getJsonData(){
 function removeOldContent(){
 	$('#returned_tweets').html('');
 	$('#flickr_slide_show').html('');
+	clearTimeout(sliderTimer);
 };
 
 function displayTweets(tweets){
@@ -76,7 +77,7 @@ function addImagesToSlideShow(){
 	}else{
 		imageIndex = imageIndex + 1;
 	}
-	setTimeout(function(){
+	sliderTimer = setTimeout(function(){
 		removeImagesFromSlideShow();
 	},5000);
 };
