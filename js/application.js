@@ -30,7 +30,7 @@ function getJsonData(){
 			displayTweets(tweets);
 		});
 	});
-	console.log('http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=816541b11404e131faf6580ee13a86d4&tags='+ searchQuery +'&per_page=5&format=json&nojsoncallback=1');
+	
 	$.getJSON('http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=816541b11404e131faf6580ee13a86d4&tags='+ searchQuery +'&per_page=5&format=json&nojsoncallback=1',
 	function(flickr){
 		console.log(flickr.photos.photo);
