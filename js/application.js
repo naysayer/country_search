@@ -4,6 +4,7 @@ var geocoder;
 var map;
 var firstTime = true;
 $(document).ready(function() {
+	console.log("hello");
 	geocoder = new google.maps.Geocoder(); //creats the ability for google to call this later
 	$('#input_field').submit(function(){ 
 		$('#loading').show();
