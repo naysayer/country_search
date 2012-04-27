@@ -5,6 +5,7 @@ var map;
 var firstTime = true;
 var sliderTimer = '';
 $(document).ready(function() {
+	console.log('HELLO CODE');
 	geocoder = new google.maps.Geocoder(); //creats the ability for google to call this later
 	$('#input_field').submit(function(){ 
 		$('#loading').show();
