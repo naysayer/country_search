@@ -5,6 +5,7 @@ var map;
 var firstTime = true;
 var sliderTimer = '';
 var image = '';
+var searchQuery = '';
 /**
  * On clicking of a button, it this runs several functions
  * @returns {boolean}
@@ -13,13 +14,37 @@ $(document).ready(function() {
 	geocoder = new google.maps.Geocoder(); //creats the ability for google to call this later
 	$('#input_field').submit(function(){ 
 		$('#loading').show();
+		checkDatabase();
+		return false;
+	});
+});
+function checkDatabase(){
+	searchQuery = $('.input_text').val();
+	console.log(searchQuery);
+	$.ajax({
+	  url: 'countries.php?country='+ searchQuery,
+	  type: "get",
+	  dataType: "html",
+		
+  success: function(data) {
+	console.log(data);
+	if(data == 'success'){
 		showResults();
 		removeOldContent();
 		getJsonData();
 		codeAddress();
-		return false;
-	});
-});
+	}else{
+		alert('We were not able to locate that country.');
+	};
+	    //called when successful
+ },
+	
+  error: function() {
+	alert('We could not located that country');
+	    //called when there is an error
+  },
+	});	
+};
 /**
  *when ran, this displays a div with content in reference to the user's request. 
 */
@@ -31,7 +56,7 @@ function showResults(){
  * @param {Object} Twitter returns 20 tweets per search, flickr returns 5 public photos
 */
 function getJsonData(){
-	var searchQuery = $('.input_text').val();
+ 	
 	
 	$.getJSON('http://search.twitter.com/search.json?result_type=recent&rpp=20&callback=?&q=%23' + searchQuery,
 	function(json){
