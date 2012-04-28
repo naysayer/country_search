@@ -4,22 +4,21 @@ var geocoder;
 var map;
 var firstTime = true;
 var sliderTimer = '';
+var image = '';
 $(document).ready(function() {
 	geocoder = new google.maps.Geocoder(); //creats the ability for google to call this later
 	$('#input_field').submit(function(){ 
 		$('#loading').show();
 		showResults();
-		getJsonData();
 		removeOldContent();
+		getJsonData();
 		codeAddress();
 		return false;
 	});
 });
-
 function showResults(){
 	$('#content').fadeIn(500);
 };
-
 function getJsonData(){
 	var searchQuery = $('.input_text').val();
 	
@@ -39,14 +38,12 @@ function getJsonData(){
 		//http://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg	
 	});
 };
-
-
 function removeOldContent(){
 	$('#returned_tweets').html('');
 	$('#flickr_slide_show').html('');
 	clearTimeout(sliderTimer);
+	imageSource = [];
 };
-
 function displayTweets(tweets){
 	var text = $('<p/>').text(tweets.text);
 	var image = $('<img/>').attr('src', tweets.profile_image_url);
@@ -54,9 +51,7 @@ function displayTweets(tweets){
 	var div = $('<div/>').attr('id', 'returned_tweets').append(image).append(user).append(text);
 	$('#tweet_box').prepend(div);
 	$('#loading').hide();
-	
 };
-
 function createPhotoSlideShow(photos){
 	var farm = photos.farm;
 	var serverId = photos.server;
@@ -66,10 +61,9 @@ function createPhotoSlideShow(photos){
 	
 	imageSource.push(url);
 };
-
 function addImagesToSlideShow(){
 	var maxIndex = imageSource.length - 1; //remember, it's always length - 1
-	var image = $('<img/>').attr('src', imageSource[imageIndex]).addClass('image_size');
+	image = $('<img/>').attr('src', imageSource[imageIndex]).addClass('image_size');
 	
 	$('#flickr_slide_show').append(image).fadeIn('slow');
 	if(imageIndex == maxIndex){
@@ -81,28 +75,12 @@ function addImagesToSlideShow(){
 		removeImagesFromSlideShow();
 	},5000);
 };
-
 function removeImagesFromSlideShow(){
 	$('#flickr_slide_show').fadeOut('slow', function(){
 		$(this).html('');
 		addImagesToSlideShow();
 	});
 };
-
-
-
-//http://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
-
-
-
-
-
-
-
-
-
-
-
 function initializeMap(latlng) {
     
     var myOptions = {
@@ -138,7 +116,7 @@ function initializeMap(latlng) {
         alert("We wern't able to locate that country: " + status);
       }
     });
-  }
+}
 
 
 
